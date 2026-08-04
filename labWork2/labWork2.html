@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>Simple Shop</title>
+	<link rel="stylesheet" href="labWork2.css">
+</head>
+<body>
+    <header>
+        <div class="topbar center">
+            <div style="flex:1"><strong>PU Shopping</strong></div>
+			<div>
+                <button class="btn muted" onclick="navigate('products')">Products</button>
+				<button class="btn" onclick="navigate('cart')">Cart <span id="cart-count" class="badge">0</span></button>
+			</div>
+		</div>
+	</header>
+    
+	<main class="container center">
+        <section id="products-view">
+            <h2>Products</h2>
+			<div class="grid" id="products"></div>
+		</section>
+        
+		<section id="cart-view" style="display:none">
+            <h2>Your Cart</h2>
+			<div id="cart-area"></div>
+			<div style="margin-top:12px">
+                <button class="btn" onclick="navigate('checkout')">Proceed to Checkout</button>
+				<button class="btn muted" onclick="clearCart()">Clear Cart</button>
+			</div>
+		</section>
+        
+		<section id="checkout-view" style="display:none">
+            <h2>Checkout</h2>
+			<form id="checkout-form" onsubmit="return submitCheckout(event)">
+                <label>Name</label>
+				<input type="text" id="cust-name" required>
+				<label>Mobile No</label>
+				<input type="tel" id="cust-mobile" required>
+				<label>Delivery Address</label>
+				<textarea id="cust-address" rows="4" required></textarea>
+				<div style="margin-top:8px">
+                    <button class="btn" type="submit">Place Order</button>
+					<button type="button" class="btn muted" onclick="navigate('cart')">Back to Cart</button>
+				</div>
+			</form>
+		</section>
+        
+		<section id="bill-view" style="display:none">
+            <h2>Bill</h2>
+			<div id="bill-area"></div>
+			<div style="margin-top:12px">
+                <button class="btn" onclick="completeOrder()">Confirm & Pay</button>
+				<button class="btn muted" onclick="printBill()" style="margin-left:8px">Print Bill</button>
+			</div>
+		</section>
+        
+		<section id="success-view" style="display:none">
+            <h2>Success</h2>
+			<p>Thank you! Your order was placed successfully.</p>
+			<button class="btn" onclick="navigate('products')">Shop More</button>
+		</section>
+	</main>
+    <script src="labWork2.js"></script>
+</body>
+</html>
