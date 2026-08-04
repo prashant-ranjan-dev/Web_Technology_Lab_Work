@@ -1,0 +1,81 @@
+ body {
+     margin: 0;
+     font-family: Arial, sans-serif;
+     line-height: 1.6;
+     background: #f5f7fb;
+     color: #1f2937;
+ }
+
+ .hero {
+     padding: 3rem 1.5rem;
+     background: linear-gradient(135deg, #2563eb 0%, #06b6d4 100%);
+     color: white;
+     text-align: center;
+ }
+
+ .hero h1 {
+     margin: 0 0 0.75rem;
+     font-size: clamp(2rem, 4vw, 3rem);
+ }
+
+ .hero p {
+     max-width: 720px;
+     margin: 0 auto;
+     font-size: 1.05rem;
+ }
+
+ main {
+     max-width: 1100px;
+     margin: 0 auto;
+     padding: 2rem 1.5rem 3rem;
+ }
+
+ .section-title {
+     margin-bottom: 1rem;
+     font-size: 1.5rem;
+     color: #111827;
+ }
+
+ .about,
+ .projects {
+     margin-bottom: 2rem;
+ }
+
+ .about p {
+     max-width: 760px;
+     margin: 0;
+ }
+
+ .grid {
+     display: grid;
+     gap: 1.25rem;
+     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+ }
+
+ .card {
+     background: white;
+     border-radius: 16px;
+     padding: 1.35rem;
+     box-shadow: 0 14px 30px rgba(15, 23, 42, 0.08);
+     border: 1px solid rgba(15, 23, 42, 0.08);
+ }
+
+ .card h3 {
+     margin-top: 0;
+     margin-bottom: 0.75rem;
+     font-size: 1.15rem;
+     color: #111827;
+ }
+
+ .card p {
+     margin: 0;
+     color: #4b5563;
+ }
+
+ footer {
+     text-align: center;
+     padding: 1.25rem;
+     color: #6b7280;
+     background: #ffffff;
+     border-top: 1px solid #e5e7eb;
+ }
