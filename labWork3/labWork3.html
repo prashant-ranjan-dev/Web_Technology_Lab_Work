@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Random Quiz Challenge</title>
+  <link rel="stylesheet", href="labWork3.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Introduction Page -->
+    <div class="card" id="introPage" style="text-align: center;">
+      <h1>🎓 Comprehensive Knowledge Assessment</h1>
+      <p class="info">Test your expertise across HTML, CSS, JavaScript, and Object-Oriented Programming (OOPs) concepts. This comprehensive evaluation features 20 questions carefully curated from a pool of 100, with randomized selections and shuffled options to ensure a unique experience every time. Challenge yourself and demonstrate your technical proficiency. Click Start to begin your assessment.</p>
+      <div class="button-row">
+        <button id="startButton">Start Assessment</button>
+      </div>
+    </div>
+
+    <!-- Quiz Page -->
+    <div class="card" id="quizCard" style="display:none;">
+      <div class="status">
+        <div id="progressText">Question 1 / 20</div>
+        <div id="scoreText">Score: 0</div>
+      </div>
+      <div class="question-box">
+        <h2 id="questionText"></h2>
+        <ul class="options" id="optionsList"></ul>
+      </div>
+      <div class="button-row">
+        <button id="nextButton">Next</button>
+      </div>
+    </div>
+
+    <!-- Results Page -->
+    <div class="card" id="resultCard" style="display:none; text-align: center;">
+      <h2>Quiz Completed</h2>
+      <p class="result-message" id="resultMessage"></p>
+      <p>Total score: <strong id="finalScore"></strong> out of 20.</p>
+      <div class="button-row">
+        <button id="reviewButton" class="secondary">Start Again</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="labWork3.js"></script>
+</body>
+</html>
