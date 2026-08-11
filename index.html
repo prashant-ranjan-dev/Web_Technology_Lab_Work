@@ -1,49 +1,515 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio - Prashant Ranjan</title>
+
+  <meta name="description" content="Portfolio of Prashant Ranjan - Web Technology Lab Projects">
+
+  <title>Prashant Ranjan — Web Technology</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+    rel="stylesheet">
+
   <link rel="stylesheet" href="style.css">
 </head>
+
+
 <body>
-  <header class="hero">
-    <h1>Hi, I'm Prashant Ranjan</h1>
-    <p>Welcome to my portfolio for the Web Technology lab. Here you can see a brief introduction and cards showcasing the projects I completed during the course.</p>
+
+  <!-- ==================================================
+         NAVIGATION
+         ================================================== -->
+
+  <header class="site-header">
+
+    <div class="nav-container">
+
+      <a href="index.html" class="brand">
+        <span class="brand-name">PRASHANT</span>
+        <span class="brand-subtitle">WEB TECHNOLOGY</span>
+      </a>
+
+
+      <nav class="navigation">
+
+        <a href="#about">ABOUT</a>
+        <a href="#works">WORKS</a>
+        <a href="#contact">CONTACT</a>
+
+      </nav>
+
+
+      <button class="menu-button" aria-label="Open navigation menu" type="button">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+    </div>
+
   </header>
+
+
+
   <main>
-    <section class="about">
-      <h2 class="section-title">About Me</h2>
-      <p>I am a student learning web technology, focusing on HTML structure, responsive layouts, and practical lab work. I enjoy creating clean and readable pages, organizing content clearly, and showcasing project work with cards.</p>
-    </section>
-    <section class="projects">
-      <h2 class="section-title">Lab Projects</h2>
-      <div class="grid">
-        <article class="card">
-          <h3>My Resume</h3>
-          <p>My Resume built using HTML5 and CSS3</p>
-          <p></p>
-          <p></p>
-          <a href="/labWork1/labWork1.html">Visit Project</a>
-        </article>
-        <article class="card">
-          <h3>Portfolio Showcase</h3>
-          <p>A personal portfolio page designed to present projects clearly with cards, introductory text, and a simple visual theme.</p>
-          <a href="/labWork2/labWork2.html">Visit Project</a>
-        </article>
-        <article class="card">
-          <h3>Form Interface Design</h3>
-          <p>A project focused on form structure and input layout, demonstrating how to organize contact and feedback sections in a clean way.</p>
-        </article>
-        <article class="card">
-          <h3>Interactive Interface Mockup</h3>
-          <p>A lab exercise to build an interface mockup using structured sections and project cards, improving usability and page flow.</p>
-        </article>
+
+
+    <!-- ==================================================
+             INTRO / HERO
+             ================================================== -->
+
+    <section class="intro-section" id="about">
+
+      <div class="intro-grid">
+
+
+        <!-- IMAGE PLACEHOLDER -->
+
+        <img src="1720520115212.jpg" alt="Prashant Ranjan"
+          style="max-width:100%; height:auto;">
+
+
+
+
+        <!-- INTRODUCTION -->
+
+        <div class="intro-content">
+
+          <p class="eyebrow">
+            WEB TECHNOLOGY · LAB PORTFOLIO
+          </p>
+
+
+          <h1>
+            Building ideas,
+            <em>one project</em>
+            at a time.
+          </h1>
+
+
+          <p class="intro-text">
+
+            Hi, I'm <strong>Prashant Ranjan</strong>,
+            a postgraduate student and aspiring software
+            developer with an interest in building practical
+            applications through code.
+
+          </p>
+
+
+          <p class="intro-text secondary">
+
+            This website brings together the projects I
+            developed as part of my Web Technology lab —
+            from a personal resume and shopping interface
+            to an interactive quiz and a scientific calculator.
+
+          </p>
+
+
+          <a href="#works" class="explore-link">
+
+            Explore my work
+
+            <span>→</span>
+
+          </a>
+
+        </div>
+
       </div>
+
     </section>
+
+
+
+    <!-- ==================================================
+             DIVIDER
+             ================================================== -->
+
+    <div class="section-divider"></div>
+
+
+
+    <!-- ==================================================
+             SELECTED WORKS
+             ================================================== -->
+
+    <section class="works-section" id="works">
+
+
+      <div class="section-heading">
+
+        <div>
+
+          <p class="eyebrow">
+            SELECTED PROJECTS
+          </p>
+
+          <h2>
+            My Works
+          </h2>
+
+        </div>
+
+
+        <p class="section-description">
+
+          Four projects exploring structure,
+          design, interaction and functionality
+          using HTML, CSS and JavaScript.
+
+        </p>
+
+      </div>
+
+
+
+      <!-- ==================================================
+                 FEATURED PROJECT — RESUME
+                 ================================================== -->
+
+      <a href="labWork1/labWork1.html" class="featured-project">
+
+        <div class="featured-number">
+          01
+        </div>
+
+
+        <div class="featured-content">
+
+          <p class="project-category">
+            PERSONAL · RESUME
+          </p>
+
+          <h3>
+            My Resume
+          </h3>
+
+          <p>
+
+            A professionally structured personal resume
+            designed as a web page using HTML, CSS and
+            JavaScript. It presents my education, skills,
+            experience and professional profile in a
+            clean and accessible format.
+
+          </p>
+
+
+          <div class="project-meta">
+
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>JavaScript</span>
+
+          </div>
+
+        </div>
+
+
+        <div class="project-arrow">
+          ↗
+        </div>
+
+      </a>
+
+
+
+      <!-- ==================================================
+                 OTHER PROJECTS
+                 ================================================== -->
+
+      <div class="projects-grid">
+
+
+        <!-- PROJECT 02 -->
+
+        <a href="labWork2/labWork2.html" class="project-card">
+
+          <div class="project-image shopping-image">
+
+            <span class="project-number">
+              02
+            </span>
+
+            <div class="visual-shopping">
+
+              <div class="shopping-top">
+                PU
+              </div>
+
+              <div class="shopping-lines">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+
+              <div class="shopping-boxes">
+
+                <i></i>
+                <i></i>
+                <i></i>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div class="project-card-content">
+
+            <p class="project-category">
+              E-COMMERCE · INTERFACE
+            </p>
+
+            <h3>
+              PU Shopping
+            </h3>
+
+            <p>
+
+              A simple shopping website designed
+              to demonstrate product presentation,
+              pricing, navigation and web interface
+              design.
+
+            </p>
+
+
+            <div class="card-footer">
+
+              <span>
+                HTML · CSS · JS
+              </span>
+
+              <span class="small-arrow">
+                ↗
+              </span>
+
+            </div>
+
+          </div>
+
+        </a>
+
+
+
+        <!-- PROJECT 03 -->
+
+        <a href="labWork3/labWork3.html" class="project-card">
+
+          <div class="project-image quiz-image">
+
+            <span class="project-number">
+              03
+            </span>
+
+            <div class="quiz-visual">
+
+              <div class="quiz-circle">
+                ?
+              </div>
+
+              <div class="quiz-option one">
+                A
+              </div>
+
+              <div class="quiz-option two">
+                B
+              </div>
+
+              <div class="quiz-option three">
+                C
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div class="project-card-content">
+
+            <p class="project-category">
+              EDUCATION · QUIZ
+            </p>
+
+            <h3>
+              Web Technology Quiz
+            </h3>
+
+            <p>
+
+              An interactive quiz designed to test
+              knowledge of HTML, CSS, JavaScript and
+              Object-Oriented Programming concepts.
+
+            </p>
+
+
+            <div class="card-footer">
+
+              <span>
+                HTML · CSS · JS · OOP
+              </span>
+
+              <span class="small-arrow">
+                ↗
+              </span>
+
+            </div>
+
+          </div>
+
+        </a>
+
+
+
+        <!-- PROJECT 04 -->
+
+        <a href="labWork4/labWork4.html" class="project-card">
+
+          <div class="project-image calculator-image">
+
+            <span class="project-number">
+              04
+            </span>
+
+            <div class="calculator-visual">
+
+              <div class="calc-display">
+                2,024
+              </div>
+
+              <div class="calc-grid">
+
+                <i>7</i>
+                <i>8</i>
+                <i>9</i>
+                <i>÷</i>
+
+                <i>4</i>
+                <i>5</i>
+                <i>6</i>
+                <i>×</i>
+
+                <i>1</i>
+                <i>2</i>
+                <i>3</i>
+                <i>+</i>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div class="project-card-content">
+
+            <p class="project-category">
+              APPLICATION · CALCULATOR
+            </p>
+
+            <h3>
+              Scientific Calculator
+            </h3>
+
+            <p>
+
+              A functional scientific calculator
+              supporting arithmetic, trigonometric,
+              logarithmic and other mathematical
+              operations.
+
+            </p>
+
+
+            <div class="card-footer">
+
+              <span>
+                HTML · CSS · JavaScript
+              </span>
+
+              <span class="small-arrow">
+                ↗
+              </span>
+
+            </div>
+
+          </div>
+
+        </a>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ==================================================
+             CLOSING SECTION
+             ================================================== -->
+
+    <section class="closing-section" id="contact">
+
+      <p class="eyebrow">
+        THANK YOU FOR VISITING
+      </p>
+
+      <h2>
+        More to come.
+      </h2>
+
+      <p>
+
+        This portfolio represents the beginning of my
+        journey into web development and software engineering.
+
+      </p>
+
+    </section>
+
+
   </main>
-  <footer>
-    <p>Web Technology Lab Work | Portfolio created in HTML</p>
+
+
+
+  <!-- ==================================================
+         FOOTER
+         ================================================== -->
+
+  <footer class="site-footer">
+
+    <div>
+
+      <strong>
+        PRASHANT RANJAN
+      </strong>
+
+      <span>
+        WEB TECHNOLOGY LAB
+      </span>
+
+    </div>
+
+
+    <p>
+      © 2026 · All projects created for academic work
+    </p>
+
   </footer>
+
+
 </body>
+
 </html>
