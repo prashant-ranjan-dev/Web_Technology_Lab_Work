@@ -1,0 +1,910 @@
+/* =========================================================
+   SCIENTIFIC CALCULATOR
+   Windows Calculator Inspired UI
+   ========================================================= */
+
+:root {
+
+    --background: #101010;
+    --calculator: #1c1c1c;
+    --display: #1c1c1c;
+
+    --button: #303030;
+    --button-hover: #3b3b3b;
+    --button-active: #454545;
+
+    --function: #292929;
+    --function-hover: #353535;
+
+    --operator: #303030;
+    --operator-hover: #3c3c3c;
+
+    --clear: #8b1e1e;
+    --clear-hover: #a52727;
+
+    --equals: #0067c0;
+    --equals-hover: #0878d1;
+
+    --text: #ffffff;
+    --secondary-text: #b8b8b8;
+    --muted-text: #858585;
+
+    --border: rgba(255, 255, 255, 0.08);
+
+    --shadow:
+        0 30px 80px rgba(0, 0, 0, 0.55);
+
+}
+
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+}
+
+
+body {
+
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at top,
+            #252525 0%,
+            #151515 40%,
+            #0d0d0d 100%
+        );
+
+    color: var(--text);
+
+    font-family:
+        "Segoe UI",
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px;
+}
+
+
+/* =========================================================
+   CALCULATOR CONTAINER
+   ========================================================= */
+
+.calculator {
+
+    width: min(900px, 100%);
+
+    min-height: 850px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #202020,
+            #191919
+        );
+
+    border: 1px solid var(--border);
+
+    border-radius: 14px;
+
+    box-shadow: var(--shadow);
+
+    padding: 24px;
+
+    display: flex;
+    flex-direction: column;
+
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.calculator-header {
+
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 18px;
+
+}
+
+
+.header-left {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+}
+
+
+.calculator-icon {
+
+    width: 42px;
+    height: 42px;
+
+    border-radius: 9px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #2b2b2b;
+
+    border: 1px solid var(--border);
+
+    font-size: 25px;
+
+    color: #dcdcdc;
+
+}
+
+
+.calculator-header h1 {
+
+    font-size: 20px;
+
+    font-weight: 500;
+
+    letter-spacing: 0.1px;
+
+}
+
+
+.calculator-header p {
+
+    color: var(--muted-text);
+
+    font-size: 12px;
+
+    margin-top: 3px;
+
+}
+
+
+.calculator-mode {
+
+    color: var(--secondary-text);
+
+    font-size: 13px;
+
+    padding: 7px 12px;
+
+    border-radius: 6px;
+
+    background: #292929;
+
+    border: 1px solid var(--border);
+
+}
+
+
+/* =========================================================
+   DISPLAY
+   ========================================================= */
+
+.display {
+
+    min-height: 180px;
+
+    padding: 20px 24px 22px;
+
+    background: var(--display);
+
+    border-radius: 8px;
+
+    border: 1px solid var(--border);
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: flex-end;
+
+    margin-bottom: 12px;
+
+}
+
+
+.display-top {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    min-height: 22px;
+
+    color: var(--muted-text);
+
+    font-size: 12px;
+
+}
+
+
+#memory-indicator {
+
+    color: #8ab4f8;
+
+}
+
+
+#angle-indicator {
+
+    color: var(--secondary-text);
+
+    font-weight: 500;
+
+}
+
+
+.expression {
+
+    min-height: 35px;
+
+    margin-top: 10px;
+
+    color: var(--secondary-text);
+
+    font-size: 20px;
+
+    font-family:
+        "Cascadia Code",
+        "Consolas",
+        monospace;
+
+    text-align: right;
+
+    overflow-x: auto;
+
+    white-space: nowrap;
+
+}
+
+
+.result {
+
+    margin-top: 4px;
+
+    font-size: clamp(38px, 6vw, 58px);
+
+    line-height: 1.1;
+
+    font-weight: 400;
+
+    text-align: right;
+
+    font-family:
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    overflow-x: auto;
+
+    white-space: nowrap;
+
+}
+
+
+/* =========================================================
+   MEMORY BAR
+   ========================================================= */
+
+.memory-bar {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(5, 1fr);
+
+    gap: 7px;
+
+    margin-bottom: 12px;
+
+}
+
+
+.memory-btn {
+
+    height: 38px;
+
+    border: 0;
+
+    border-radius: 5px;
+
+    background: #292929;
+
+    color: var(--secondary-text);
+
+    font-size: 13px;
+
+    cursor: pointer;
+
+    transition:
+        background 0.15s ease,
+        transform 0.1s ease;
+
+}
+
+
+.memory-btn:hover {
+
+    background: #363636;
+
+}
+
+
+.memory-btn:active {
+
+    transform: scale(0.97);
+
+}
+
+
+/* =========================================================
+   SCIENTIFIC PANEL
+   ========================================================= */
+
+.scientific-panel {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+
+    margin-bottom: 12px;
+
+}
+
+
+.scientific-row {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(6, 1fr);
+
+    gap: 7px;
+
+}
+
+
+.scientific-btn {
+
+    height: 44px;
+
+    border: 0;
+
+    border-radius: 5px;
+
+    background: var(--function);
+
+    color: #eeeeee;
+
+    font-size: 14px;
+
+    cursor: pointer;
+
+    transition:
+        background 0.15s ease,
+        transform 0.1s ease;
+
+}
+
+
+.scientific-btn:hover {
+
+    background: var(--function-hover);
+
+}
+
+
+.scientific-btn:active {
+
+    transform: scale(0.97);
+
+}
+
+
+/* =========================================================
+   OPTIONS
+   ========================================================= */
+
+.options-bar {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr auto;
+
+    gap: 10px;
+
+    align-items: end;
+
+    margin-bottom: 12px;
+
+}
+
+
+.option-group {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+
+}
+
+
+.option-label {
+
+    color: var(--muted-text);
+
+    font-size: 11px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.6px;
+
+}
+
+
+select {
+
+    width: 100%;
+
+    height: 40px;
+
+    padding: 0 11px;
+
+    border-radius: 5px;
+
+    border: 1px solid var(--border);
+
+    outline: none;
+
+    background: #292929;
+
+    color: var(--text);
+
+    font-family: inherit;
+
+    cursor: pointer;
+
+}
+
+
+select:hover {
+
+    background: #333333;
+
+}
+
+
+select:focus {
+
+    border-color: #555555;
+
+}
+
+
+.apply-function {
+
+    height: 40px;
+
+    padding: 0 20px;
+
+    border: 0;
+
+    border-radius: 5px;
+
+    background: #3a3a3a;
+
+    color: white;
+
+    font-size: 13px;
+
+    cursor: pointer;
+
+}
+
+
+.apply-function:hover {
+
+    background: #484848;
+
+}
+
+
+/* =========================================================
+   MAIN KEYPAD
+   ========================================================= */
+
+.keypad {
+
+    flex: 1;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(5, 1fr);
+
+    grid-template-rows:
+        repeat(5, minmax(62px, 1fr));
+
+    gap: 7px;
+
+}
+
+
+/* =========================================================
+   GENERAL KEY
+   ========================================================= */
+
+.key {
+
+    border: 0;
+
+    border-radius: 5px;
+
+    color: var(--text);
+
+    font-family:
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    font-size: 20px;
+
+    cursor: pointer;
+
+    transition:
+        background 0.12s ease,
+        transform 0.08s ease;
+
+    user-select: none;
+
+}
+
+
+.key:active {
+
+    transform: scale(0.96);
+
+}
+
+
+/* =========================================================
+   NUMBER BUTTONS
+   ========================================================= */
+
+.number-key {
+
+    background: var(--button);
+
+    font-size: 22px;
+
+}
+
+
+.number-key:hover {
+
+    background: var(--button-hover);
+
+}
+
+
+/* =========================================================
+   FUNCTION BUTTONS
+   ========================================================= */
+
+.function-key {
+
+    background: var(--function);
+
+    color: #eeeeee;
+
+    font-size: 16px;
+
+}
+
+
+.function-key:hover {
+
+    background: var(--function-hover);
+
+}
+
+
+/* =========================================================
+   OPERATOR BUTTONS
+   ========================================================= */
+
+.operator-key {
+
+    background: var(--operator);
+
+    color: #ffffff;
+
+    font-size: 25px;
+
+}
+
+
+.operator-key:hover {
+
+    background: var(--operator-hover);
+
+}
+
+
+/* =========================================================
+   CLEAR BUTTON
+   ========================================================= */
+
+.clear-key {
+
+    background: var(--clear);
+
+    color: white;
+
+    font-size: 16px;
+
+}
+
+
+.clear-key:hover {
+
+    background: var(--clear-hover);
+
+}
+
+
+/* =========================================================
+   EQUALS
+   ========================================================= */
+
+.equals-key {
+
+    background: var(--equals);
+
+    color: white;
+
+    font-size: 26px;
+
+}
+
+
+.equals-key:hover {
+
+    background: var(--equals-hover);
+
+}
+
+
+/* =========================================================
+   KEYBOARD FOCUS
+   ========================================================= */
+
+.key:focus-visible,
+.memory-btn:focus-visible,
+.scientific-btn:focus-visible,
+.apply-function:focus-visible,
+select:focus-visible {
+
+    outline: 2px solid #5fa8ff;
+
+    outline-offset: 2px;
+
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.calculator-footer {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    color: #666666;
+
+    font-size: 11px;
+
+    margin-top: 14px;
+
+}
+
+
+/* =========================================================
+   SCROLLBAR
+   ========================================================= */
+
+::-webkit-scrollbar {
+
+    height: 5px;
+    width: 5px;
+
+}
+
+
+::-webkit-scrollbar-track {
+
+    background: transparent;
+
+}
+
+
+::-webkit-scrollbar-thumb {
+
+    background: #4a4a4a;
+
+    border-radius: 10px;
+
+}
+
+
+/* =========================================================
+   RESPONSIVE DESIGN
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    body {
+
+        padding: 10px;
+
+        align-items: stretch;
+
+    }
+
+
+    .calculator {
+
+        min-height: 100vh;
+
+        width: 100%;
+
+        padding: 14px;
+
+        border-radius: 10px;
+
+    }
+
+
+    .calculator-header h1 {
+
+        font-size: 17px;
+
+    }
+
+
+    .calculator-mode {
+
+        display: none;
+
+    }
+
+
+    .display {
+
+        min-height: 145px;
+
+    }
+
+
+    .scientific-btn {
+
+        height: 40px;
+
+        font-size: 12px;
+
+    }
+
+
+    .keypad {
+
+        grid-template-rows:
+            repeat(5, minmax(55px, 1fr));
+
+    }
+
+
+    .key {
+
+        font-size: 17px;
+
+    }
+
+
+    .number-key {
+
+        font-size: 20px;
+
+    }
+
+
+    .options-bar {
+
+        grid-template-columns: 1fr 1fr;
+
+    }
+
+
+    .apply-function {
+
+        grid-column: 1 / -1;
+
+    }
+
+}
+
+
+@media (max-width: 450px) {
+
+    .scientific-row {
+
+        grid-template-columns:
+            repeat(3, 1fr);
+
+    }
+
+
+    .scientific-panel {
+
+        max-height: 250px;
+
+        overflow-y: auto;
+
+    }
+
+
+    .keypad {
+
+        gap: 5px;
+
+    }
+
+
+    .memory-bar {
+
+        gap: 5px;
+
+    }
+
+
+    .display {
+
+        padding: 15px;
+
+    }
+
+}

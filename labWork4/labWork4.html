@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Scientific Calculator - Lab Work 4</title>
+
+    <link rel="stylesheet" href="labWork4.css">
+</head>
+
+<body>
+
+<main class="calculator">
+
+    <!-- ================= HEADER ================= -->
+    <header class="calculator-header">
+        <div class="header-left">
+            <div class="calculator-icon">⌁</div>
+
+            <div>
+                <h1>Scientific Calculator</h1>
+                <p>Lab Work 4</p>
+            </div>
+        </div>
+
+        <div class="calculator-mode">
+            Scientific
+        </div>
+    </header>
+
+
+    <!-- ================= DISPLAY ================= -->
+    <section class="display" aria-live="polite">
+
+        <div class="display-top">
+            <span id="memory-indicator"></span>
+            <span id="angle-indicator">DEG</span>
+        </div>
+
+        <div id="expression" class="expression"></div>
+
+        <div id="result" class="result">0</div>
+
+    </section>
+
+
+    <!-- ================= MEMORY ================= -->
+    <section class="memory-bar">
+
+        <button class="memory-btn" data-action="MC">MC</button>
+        <button class="memory-btn" data-action="MR">MR</button>
+        <button class="memory-btn" data-action="M+">M+</button>
+        <button class="memory-btn" data-action="M-">M−</button>
+        <button class="memory-btn" data-action="MS">MS</button>
+
+    </section>
+
+
+    <!-- ================= SCIENTIFIC CONTROLS ================= -->
+    <section class="scientific-panel">
+
+        <div class="scientific-row">
+
+            <button class="scientific-btn" data-action="2nd">
+                2nd
+            </button>
+
+            <button class="scientific-btn" data-action="pi">
+                π
+            </button>
+
+            <button class="scientific-btn" data-action="e">
+                e
+            </button>
+
+            <button class="scientific-btn" data-action="fact">
+                x!
+            </button>
+
+            <button class="scientific-btn" data-action="square">
+                x²
+            </button>
+
+            <button class="scientific-btn" data-action="power">
+                xʸ
+            </button>
+
+        </div>
+
+
+        <div class="scientific-row">
+
+            <button class="scientific-btn" data-action="sqrt">
+                √x
+            </button>
+
+            <button class="scientific-btn" data-action="tenpow">
+                10ˣ
+            </button>
+
+            <button class="scientific-btn" data-action="log">
+                log
+            </button>
+
+            <button class="scientific-btn" data-action="ln">
+                ln
+            </button>
+
+            <button class="scientific-btn" data-action="exp">
+                exp
+            </button>
+
+            <button class="scientific-btn" data-action="abs">
+                |x|
+            </button>
+
+        </div>
+
+
+        <div class="scientific-row">
+
+            <button class="scientific-btn" data-action="sin">
+                sin
+            </button>
+
+            <button class="scientific-btn" data-action="cos">
+                cos
+            </button>
+
+            <button class="scientific-btn" data-action="tan">
+                tan
+            </button>
+
+            <button class="scientific-btn" data-action="asin">
+                sin⁻¹
+            </button>
+
+            <button class="scientific-btn" data-action="acos">
+                cos⁻¹
+            </button>
+
+            <button class="scientific-btn" data-action="atan">
+                tan⁻¹
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= MODE / FUNCTION BAR ================= -->
+    <section class="options-bar">
+
+        <div class="option-group">
+
+            <span class="option-label">Angle</span>
+
+            <select id="trig-mode">
+                <option value="deg">Degrees</option>
+                <option value="rad">Radians</option>
+                <option value="grad">Gradians</option>
+            </select>
+
+        </div>
+
+
+        <div class="option-group">
+
+            <span class="option-label">Function</span>
+
+            <select id="function-select">
+
+                <option value="none">Select function</option>
+
+                <option value="sin">sin</option>
+                <option value="cos">cos</option>
+                <option value="tan">tan</option>
+
+                <option value="asin">sin⁻¹</option>
+                <option value="acos">cos⁻¹</option>
+                <option value="atan">tan⁻¹</option>
+
+                <option value="sqrt">√x</option>
+                <option value="log">log</option>
+                <option value="ln">ln</option>
+                <option value="abs">|x|</option>
+
+            </select>
+
+        </div>
+
+
+        <button id="apply-function" class="apply-function">
+            Apply
+        </button>
+
+    </section>
+
+
+    <!-- ================= MAIN KEYPAD ================= -->
+    <section class="keypad">
+
+        <!-- Top utility row -->
+
+        <button class="key function-key" data-action="percent">
+            %
+        </button>
+
+        <button class="key function-key" data-action="CE">
+            CE
+        </button>
+
+        <button class="key clear-key" data-action="C">
+            C
+        </button>
+
+        <button class="key function-key" data-action="backspace">
+            ⌫
+        </button>
+
+        <button class="key operator-key" data-action="divide">
+            ÷
+        </button>
+
+
+        <!-- Row 1 -->
+
+        <button class="key number-key" data-value="7">7</button>
+        <button class="key number-key" data-value="8">8</button>
+        <button class="key number-key" data-value="9">9</button>
+
+        <button class="key operator-key" data-action="multiply">
+            ×
+        </button>
+
+        <button class="key function-key" data-action="lparen">
+            (
+        </button>
+
+
+        <!-- Row 2 -->
+
+        <button class="key number-key" data-value="4">4</button>
+        <button class="key number-key" data-value="5">5</button>
+        <button class="key number-key" data-value="6">6</button>
+
+        <button class="key operator-key" data-action="subtract">
+            −
+        </button>
+
+        <button class="key function-key" data-action="rparen">
+            )
+        </button>
+
+
+        <!-- Row 3 -->
+
+        <button class="key number-key" data-value="1">1</button>
+        <button class="key number-key" data-value="2">2</button>
+        <button class="key number-key" data-value="3">3</button>
+
+        <button class="key operator-key" data-action="add">
+            +
+        </button>
+
+        <button class="key function-key" data-action="mod">
+            mod
+        </button>
+
+
+        <!-- Bottom row -->
+
+        <button class="key function-key" data-action="toggle-sign">
+            ±
+        </button>
+
+        <button class="key number-key" data-value="0">
+            0
+        </button>
+
+        <button class="key number-key" data-value=".">
+            .
+        </button>
+
+        <button class="key equals-key" data-action="equals">
+            =
+        </button>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="calculator-footer">
+        <span>Scientific Calculator</span>
+        <span>•</span>
+        <span>Lab Work 4</span>
+    </footer>
+
+</main>
+
+
+<script src="labWork4.js"></script>
+
+</body>
+</html>
