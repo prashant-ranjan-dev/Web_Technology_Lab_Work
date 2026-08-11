@@ -1,48 +1,606 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Random Quiz Challenge</title>
-  <link rel="stylesheet", href="labWork3.css">
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Technical knowledge assessment covering HTML, CSS, JavaScript and Object-Oriented Programming."
+    >
+
+    <title>Web Technology Quiz | Prashant Ranjan</title>
+
+    <link
+        rel="stylesheet"
+        href="labWork3.css"
+    >
+
 </head>
+
+
 <body>
-  <div class="container">
-    <!-- Introduction Page -->
-    <div class="card" id="introPage" style="text-align: center;">
-      <h1>🎓 Comprehensive Knowledge Assessment</h1>
-      <p class="info">Test your expertise across HTML, CSS, JavaScript, and Object-Oriented Programming (OOPs) concepts. This comprehensive evaluation features 20 questions carefully curated from a pool of 100, with randomized selections and shuffled options to ensure a unique experience every time. Challenge yourself and demonstrate your technical proficiency. Click Start to begin your assessment.</p>
-      <div class="button-row">
-        <button id="startButton">Start Assessment</button>
-      </div>
-    </div>
 
-    <!-- Quiz Page -->
-    <div class="card" id="quizCard" style="display:none;">
-      <div class="status">
-        <div id="progressText">Question 1 / 20</div>
-        <div id="scoreText">Score: 0</div>
-      </div>
-      <div class="question-box">
-        <h2 id="questionText"></h2>
-        <ul class="options" id="optionsList"></ul>
-      </div>
-      <div class="button-row">
-        <button id="nextButton">Next</button>
-      </div>
-    </div>
+    <!-- =====================================================
+         APP HEADER
+         ===================================================== -->
 
-    <!-- Results Page -->
-    <div class="card" id="resultCard" style="display:none; text-align: center;">
-      <h2>Quiz Completed</h2>
-      <p class="result-message" id="resultMessage"></p>
-      <p>Total score: <strong id="finalScore"></strong> out of 20.</p>
-      <div class="button-row">
-        <button id="reviewButton" class="secondary">Start Again</button>
-      </div>
-    </div>
-  </div>
+    <header class="app-header">
 
-  <script src="labWork3.js"></script>
+        <div class="header-inner">
+
+            <a
+                href="../index.html"
+                class="brand"
+            >
+
+                <span class="brand-mark">
+                    WT
+                </span>
+
+                <span class="brand-text">
+
+                    <strong>
+                        Web Technology
+                    </strong>
+
+                    <small>
+                        Knowledge Assessment
+                    </small>
+
+                </span>
+
+            </a>
+
+
+            <div class="header-label">
+
+                <span class="status-dot"></span>
+
+                Interactive Assessment
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         MAIN APPLICATION
+         ===================================================== -->
+
+    <main class="app-container">
+
+
+        <!-- =================================================
+             INTRODUCTION SCREEN
+             ================================================= -->
+
+        <section
+            class="screen intro-screen"
+            id="introPage"
+        >
+
+            <div class="intro-layout">
+
+
+                <div class="intro-main">
+
+                    <div class="eyebrow">
+
+                        <span class="eyebrow-line"></span>
+
+                        WEB TECHNOLOGY · LAB WORK 3
+
+                    </div>
+
+
+                    <h1>
+
+                        Test your
+                        <span>technical knowledge.</span>
+
+                    </h1>
+
+
+                    <p class="intro-description">
+
+                        Challenge yourself across HTML, CSS,
+                        JavaScript and Object-Oriented Programming.
+                        Each assessment selects 20 questions from
+                        the available question bank and randomizes
+                        the answer choices.
+
+                    </p>
+
+
+                    <button
+                        id="startButton"
+                        class="primary-button"
+                        type="button"
+                    >
+
+                        Start Assessment
+
+                        <span class="button-arrow">
+                            →
+                        </span>
+
+                    </button>
+
+                </div>
+
+
+
+                <div class="assessment-preview">
+
+
+                    <div class="preview-header">
+
+                        <span>
+                            ASSESSMENT
+                        </span>
+
+                        <span>
+                            20 QUESTIONS
+                        </span>
+
+                    </div>
+
+
+                    <div class="preview-content">
+
+                        <div class="preview-icon">
+                            ?
+                        </div>
+
+
+                        <div>
+
+                            <strong>
+                                Comprehensive
+                                Knowledge Test
+                            </strong>
+
+                            <p>
+                                HTML · CSS · JavaScript · OOP
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="preview-stats">
+
+                        <div>
+
+                            <strong>
+                                20
+                            </strong>
+
+                            <span>
+                                Questions
+                            </span>
+
+                        </div>
+
+
+                        <div>
+
+                            <strong>
+                                4
+                            </strong>
+
+                            <span>
+                                Topics
+                            </span>
+
+                        </div>
+
+
+                        <div>
+
+                            <strong>
+                                ∞
+                            </strong>
+
+                            <span>
+                                Attempts
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="preview-topics">
+
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JavaScript</span>
+                        <span>OOP</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="intro-footer">
+
+                <span>
+                    RANDOMIZED QUESTIONS
+                </span>
+
+                <span>
+                    SHUFFLED OPTIONS
+                </span>
+
+                <span>
+                    INSTANT SCORE
+                </span>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             QUIZ SCREEN
+             ================================================= -->
+
+        <section
+            class="screen quiz-screen"
+            id="quizCard"
+            hidden
+        >
+
+
+            <!-- Quiz top bar -->
+
+            <div class="quiz-topbar">
+
+
+                <div class="quiz-progress-info">
+
+                    <span class="small-label">
+                        QUESTION
+                    </span>
+
+                    <strong id="progressText">
+                        01 / 20
+                    </strong>
+
+                </div>
+
+
+                <div class="score-display">
+
+                    <span class="small-label">
+                        CURRENT SCORE
+                    </span>
+
+                    <strong id="scoreText">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <!-- Progress bar -->
+
+            <div class="progress-track">
+
+                <div
+                    class="progress-bar"
+                    id="progressBar"
+                ></div>
+
+            </div>
+
+
+
+            <!-- Question -->
+
+            <div class="question-area">
+
+
+                <div class="question-meta">
+
+                    <span
+                        class="category-badge"
+                        id="categoryBadge"
+                    >
+                        HTML
+                    </span>
+
+                    <span class="answer-hint">
+                        Select one answer
+                    </span>
+
+                </div>
+
+
+                <h2 id="questionText">
+                    Question goes here
+                </h2>
+
+
+                <div
+                    class="options"
+                    id="optionsList"
+                ></div>
+
+
+                <div class="quiz-actions">
+
+
+                    <p
+                        class="selection-message"
+                        id="selectionMessage"
+                    >
+                        Choose an option to continue.
+                    </p>
+
+
+                    <button
+                        id="nextButton"
+                        class="primary-button next-button"
+                        type="button"
+                        disabled
+                    >
+
+                        <span id="nextButtonText">
+                            Next Question
+                        </span>
+
+                        <span class="button-arrow">
+                            →
+                        </span>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="quiz-footer">
+
+                <span>
+                    WEB TECHNOLOGY ASSESSMENT
+                </span>
+
+                <span>
+                    HTML · CSS · JS · OOP
+                </span>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             RESULT SCREEN
+             ================================================= -->
+
+        <section
+            class="screen result-screen"
+            id="resultCard"
+            hidden
+        >
+
+
+            <div class="result-heading">
+
+                <div class="eyebrow">
+
+                    <span class="eyebrow-line"></span>
+
+                    ASSESSMENT COMPLETE
+
+                </div>
+
+
+                <h2>
+                    Your results are in.
+                </h2>
+
+                <p id="resultMessage">
+                    Great work.
+                </p>
+
+            </div>
+
+
+
+            <div class="result-layout">
+
+
+                <!-- Score -->
+
+                <div class="score-card">
+
+                    <div
+                        class="score-ring"
+                        id="scoreRing"
+                    >
+
+                        <div class="score-ring-inner">
+
+                            <strong id="percentageScore">
+                                0%
+                            </strong>
+
+                            <span>
+                                SCORE
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="score-number">
+
+                        <strong id="finalScore">
+                            0
+                        </strong>
+
+                        <span>
+                            / 20
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Breakdown -->
+
+                <div class="result-breakdown">
+
+
+                    <div class="breakdown-item">
+
+                        <span class="breakdown-icon correct">
+                            ✓
+                        </span>
+
+                        <div>
+
+                            <strong id="correctCount">
+                                0
+                            </strong>
+
+                            <span>
+                                Correct Answers
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="breakdown-item">
+
+                        <span class="breakdown-icon incorrect">
+                            ×
+                        </span>
+
+                        <div>
+
+                            <strong id="incorrectCount">
+                                0
+                            </strong>
+
+                            <span>
+                                Incorrect Answers
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="breakdown-item">
+
+                        <span class="breakdown-icon total">
+                            #
+                        </span>
+
+                        <div>
+
+                            <strong>
+                                20
+                            </strong>
+
+                            <span>
+                                Total Questions
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="result-actions">
+
+
+                <button
+                    id="reviewButton"
+                    class="primary-button"
+                    type="button"
+                >
+
+                    Try Again
+
+                    <span class="button-arrow">
+                        ↻
+                    </span>
+
+                </button>
+
+
+                <button
+                    id="homeButton"
+                    class="secondary-button"
+                    type="button"
+                >
+
+                    Back to Introduction
+
+                </button>
+
+            </div>
+
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =====================================================
+         FOOTER
+         ===================================================== -->
+
+    <footer class="app-footer">
+
+        <span>
+            PRASHANT RANJAN
+        </span>
+
+        <span>
+            WEB TECHNOLOGY LAB · 2026
+        </span>
+
+    </footer>
+
+
+
+    <script src="labWork3.js"></script>
+
 </body>
+
 </html>
