@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Northstar | Intelligent business transformation</title>
+	<link rel="stylesheet" href="labWork7.css">
+</head>
+<body>
+	<header class="site-header">
+		<a class="brand" href="labWork7.html"><span class="brand-mark">N</span><span>Northstar<span class="brand-dot">.</span></span></a>
+		<nav class="main-nav" aria-label="Main navigation">
+			<a href="solutions.html">Solutions</a>
+			<a href="industries.html">Industries</a>
+			<a href="about.html">About us</a>
+			<a href="register.html">Join Northstar</a>
+			<a class="nav-login" href="login.html">Portal login <span>-></span></a>
+		</nav>
+	</header>
+
+	<main>
+		<section id="home" class="view active-view">
+			<div class="hero-copy">
+				<p class="eyebrow">Human + digital intelligence</p>
+				<h1>We make <em>what's next</em> work.</h1>
+				<p class="hero-text">Northstar helps ambitious organizations transform the way they operate, serve customers, and build a better future for their people.</p>
+				<div class="hero-actions"><a class="button button-accent" href="register.html">Work with us <span>-></span></a><a class="text-link light-link" href="login.html">Employee portal</a></div>
+			</div>
+			<div class="hero-visual"><div class="visual-grid"></div><div class="hero-orbit orbit-one"></div><div class="hero-orbit orbit-two"></div><span class="visual-tag">NORTHSTAR / 01</span><div class="visual-caption"><strong>Bold ideas.</strong><br>Real-world impact.</div></div>
+			<div class="hero-scroll">Scroll to explore <span>↓</span></div>
+		</section>
+
+		<section id="solutions" class="home-section intro-section">
+			<div class="section-kicker">What we do</div><div><h2>Transformation that moves at the speed of change.</h2><p>From customer experience to intelligent automation, we bring strategy, technology, and operations together to create lasting momentum.</p></div>
+		</section>
+		<section class="home-section services-section"><article><span>01</span><h3>Customer experience</h3><p>Design connected journeys that make every interaction more useful, personal, and human.</p><a href="solutions.html">Explore capability <b>↗</b></a></article><article><span>02</span><h3>Digital operations</h3><p>Build resilient teams and smarter processes that turn complexity into an advantage.</p><a href="solutions.html">Explore capability <b>↗</b></a></article><article><span>03</span><h3>Applied intelligence</h3><p>Put data and AI to work responsibly, with outcomes your business can measure.</p><a href="solutions.html">Explore capability <b>↗</b></a></article></section>
+		<section id="industries" class="impact-band"><div><p class="eyebrow">Northstar by the numbers</p><h2>Global reach.<br><em>Local insight.</em></h2></div><div class="stats"><div><strong>30+</strong><span>markets connected</span></div><div><strong>24/7</strong><span>always-on expertise</span></div><div><strong>98%</strong><span>partner retention</span></div></div></section>
+		<section id="about" class="home-section closing-section"><p class="eyebrow">Let's make progress</p><h2>Have a challenge<br>worth solving?</h2><a class="button button-dark" href="register.html">Start a conversation <span>-></span></a></section>
+
+		<section id="register" class="view form-view">
+			<div class="section-heading"><p class="eyebrow">Join the team</p><h2>Create your portal account</h2><p>Register as an employee or administrator. Your role controls which company directory you can view.</p></div>
+			<form id="register-form" class="portal-form">
+				<label>Full name<input name="name" type="text" placeholder="Avery Morgan" required></label>
+				<label>Work email<input name="email" type="email" placeholder="avery@northstar.test" required></label>
+				<label>Role<select name="role" required><option value="employee">Employee</option><option value="admin">Administrator</option></select></label>
+				<label>Password<input name="password" type="password" minlength="8" placeholder="At least 8 characters" required></label>
+				<button class="button button-primary" type="submit">Create account <span>-></span></button>
+				<p class="form-message" id="register-message" role="status"></p>
+			</form>
+		</section>
+
+		<section id="login" class="view form-view">
+			<div class="section-heading"><p class="eyebrow">Welcome back</p><h2>Sign in to Northstar</h2><p>Use your work email to open your role-specific directory.</p></div>
+			<form id="login-form" class="portal-form">
+				<label>Work email<input name="email" type="email" placeholder="you@northstar.test" required></label>
+				<label>Password<input name="password" type="password" placeholder="Your password" required></label>
+				<button class="button button-primary" type="submit">Sign in <span>-></span></button>
+				<p class="form-message" id="login-message" role="status"></p>
+			</form>
+		</section>
+
+		<section id="dashboard" class="view dashboard-view">
+			<div class="dashboard-top"><div><p class="eyebrow">Private directory</p><h2 id="welcome-title">Your dashboard</h2><p id="dashboard-subtitle"></p></div><button class="button button-outline" id="logout-button" type="button">Log out</button></div>
+			<div class="directory-heading"><h3 id="directory-title">Directory</h3><span id="directory-count"></span></div>
+			<div id="directory-list" class="directory-list"></div>
+			<p class="form-message" id="dashboard-message" role="status"></p>
+		</section>
+	</main>
+	<footer><span>NORTHSTAR PEOPLE PORTAL</span><span>Secure role-based access</span></footer>
+	<script src="labWork7.js"></script>
+</body>
+</html>
