@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Search real book records from the Open Library Search API using jQuery Ajax.">
+  <title>Book Shelf — Open Library Search</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" defer></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="Book Shelf home">
+      <span class="brand-mark" aria-hidden="true">B</span>
+      <span>book<span class="brand-light">shelf</span></span>
+    </a>
+    <span class="demo-badge"><span class="status-dot" aria-hidden="true"></span> JQUERY AJAX · OPEN LIBRARY</span>
+  </header>
+
+  <main class="page-shell">
+    <section class="hero" aria-labelledby="page-title">
+      <div class="hero-copy">
+        <p class="eyebrow">A GOOD BOOK IS ALWAYS IN SEASON</p>
+        <h1 id="page-title">A shelf worth exploring<span class="title-period">.</span></h1>
+        <p class="subtitle">Find your next read in the Open Library catalogue.</p>
+      </div>
+      <div class="hero-decoration" aria-hidden="true">
+        <span class="book-shape book-shape-one"></span>
+        <span class="book-shape book-shape-two"></span>
+        <span class="book-shape book-shape-three"></span>
+        <span class="sparkle sparkle-one">✳</span>
+        <span class="sparkle sparkle-two">✦</span>
+      </div>
+    </section>
+
+    <section class="library-panel" aria-labelledby="library-title">
+      <div class="panel-top">
+        <div>
+          <p class="eyebrow">YOUR NEXT READ</p>
+          <h2 id="library-title">The little library <span class="count-badge" id="book-count">—</span></h2>
+        </div>
+        <form class="load-controls" id="book-search-form">
+          <label class="visually-hidden" for="book-query">Search by book title or author</label>
+          <input id="book-query" name="q" type="search" placeholder="Title or author…" maxlength="120">
+          <button class="load-button" id="load-books" type="submit">
+            <span class="button-icon" aria-hidden="true">⌕</span>
+            <span id="button-label">Search books</span>
+          </button>
+        </form>
+      </div>
+      <p class="panel-caption">Search real titles and authors, powered by Open Library.</p>
+
+      <p class="request-status" id="request-status" role="status" aria-live="polite">
+        Ready when you are. Load the collection to get started.
+      </p>
+      <div class="book-grid" id="book-list" aria-live="polite"></div>
+      <div class="empty-state" id="empty-state">
+        <span class="empty-icon" aria-hidden="true">▤</span>
+        <p>Your next favorite is one click away.</p>
+      </div>
+      <div class="error-state" id="error-state" role="alert" hidden>
+        <span class="error-icon" aria-hidden="true">!</span>
+        <div>
+          <h3>We couldn't load the books</h3>
+          <p id="error-message"></p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="page-footer">
+      <span>Stories for slow mornings and late nights.</span>
+      <span><span class="footer-lock" aria-hidden="true">⌁</span> Data from <a href="https://openlibrary.org/" target="_blank" rel="noopener noreferrer">Open Library</a> · jQuery <code>$.ajax</code></span>
+    </footer>
+  </main>
+</body>
+</html>
