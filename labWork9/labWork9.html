@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="A weather dashboard powered by an asynchronous JSON weather API demo.">
-  <title>Weather Desk — API Demo</title>
+  <meta name="description" content="A live weather dashboard powered by the Open-Meteo forecast and geocoding APIs.">
+  <title>Weather Desk — Live Weather</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer></script>
+  <link rel="stylesheet" href="labWork9.css">
+  <script src="labWork9.js" defer></script>
 </head>
 <body>
   <header class="topbar">
@@ -17,7 +17,7 @@
       <span class="brand-mark" aria-hidden="true">W</span>
       <span>weather<span class="brand-light">desk</span></span>
     </a>
-    <span class="api-badge"><span class="status-dot" aria-hidden="true"></span> HYPOTHETICAL API · DEMO DATA</span>
+    <span class="api-badge"><span class="status-dot" aria-hidden="true"></span> LIVE FORECAST · OPEN-METEO</span>
   </header>
 
   <main class="page-shell">
@@ -25,18 +25,12 @@
       <div>
         <p class="eyebrow">YOUR LITTLE WINDOW TO THE SKY</p>
         <h1 id="page-title">Weather, at a glance<span class="title-period">.</span></h1>
-        <p class="subheading">A live-feeling forecast, fetched as JSON from our demo weather API.</p>
+        <p class="subheading">Current conditions and a five-day forecast, fetched live.</p>
       </div>
       <form class="location-picker" id="weather-form">
-        <label for="city-select">LOCATION</label>
+        <label for="city-input">LOCATION</label>
         <div class="picker-controls">
-          <select id="city-select" name="city" aria-label="Choose a city">
-            <option value="london">London</option>
-            <option value="new-york">New York</option>
-            <option value="tokyo">Tokyo</option>
-            <option value="delhi">New Delhi</option>
-            <option value="sydney">Sydney</option>
-          </select>
+          <input id="city-input" name="city" type="text" value="London" placeholder="Enter a city…" aria-label="Enter a city" autocomplete="off" maxlength="100" required>
           <button class="refresh-button" id="refresh-button" type="submit">
             <span class="refresh-icon" aria-hidden="true">↻</span>
             <span>Refresh</span>
@@ -113,8 +107,8 @@
     </section>
 
     <footer class="page-footer">
-      <span>Weather data is sample content for this demo.</span>
-      <span><span class="footer-dot" aria-hidden="true"></span> JSON response · asynchronous fetch</span>
+      <span>Forecasts are provided by Open-Meteo.</span>
+      <span><span class="footer-dot" aria-hidden="true"></span> Live JSON · <a href="https://open-meteo.com/" target="_blank" rel="noopener noreferrer">Open-Meteo API</a></span>
     </footer>
   </main>
 </body>

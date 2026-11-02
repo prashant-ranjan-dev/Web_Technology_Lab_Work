@@ -154,8 +154,8 @@ h1 {
   gap: 8px;
 }
 
-.picker-controls select {
-  width: 155px;
+.picker-controls input {
+  width: 205px;
   height: 39px;
   padding: 0 31px 0 11px;
   border: 1px solid #e1e9e4;
@@ -166,7 +166,11 @@ h1 {
   font-size: 11px;
 }
 
-.picker-controls select:focus {
+.picker-controls input::placeholder {
+  color: #aab3ad;
+}
+
+.picker-controls input:focus {
   border-color: #83a892;
   box-shadow: 0 0 0 3px rgba(69, 125, 91, .1);
 }
@@ -525,6 +529,13 @@ h1 {
   font-size: 9px;
 }
 
+.page-footer a {
+  color: #71847b;
+  text-decoration: underline;
+  text-decoration-color: #cbd8cf;
+  text-underline-offset: 2px;
+}
+
 .footer-dot {
   width: 6px;
   height: 6px;
@@ -591,11 +602,11 @@ h1 {
 
   .picker-controls,
   .location-picker,
-  .picker-controls select {
+  .picker-controls input {
     width: 100%;
   }
 
-  .picker-controls select {
+  .picker-controls input {
     flex: 1;
   }
 
