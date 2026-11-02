@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A weather dashboard powered by an asynchronous JSON weather API demo.">
+  <title>Weather Desk — API Demo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="Weather Desk home">
+      <span class="brand-mark" aria-hidden="true">W</span>
+      <span>weather<span class="brand-light">desk</span></span>
+    </a>
+    <span class="api-badge"><span class="status-dot" aria-hidden="true"></span> HYPOTHETICAL API · DEMO DATA</span>
+  </header>
+
+  <main class="page-shell">
+    <section class="page-heading" aria-labelledby="page-title">
+      <div>
+        <p class="eyebrow">YOUR LITTLE WINDOW TO THE SKY</p>
+        <h1 id="page-title">Weather, at a glance<span class="title-period">.</span></h1>
+        <p class="subheading">A live-feeling forecast, fetched as JSON from our demo weather API.</p>
+      </div>
+      <form class="location-picker" id="weather-form">
+        <label for="city-select">LOCATION</label>
+        <div class="picker-controls">
+          <select id="city-select" name="city" aria-label="Choose a city">
+            <option value="london">London</option>
+            <option value="new-york">New York</option>
+            <option value="tokyo">Tokyo</option>
+            <option value="delhi">New Delhi</option>
+            <option value="sydney">Sydney</option>
+          </select>
+          <button class="refresh-button" id="refresh-button" type="submit">
+            <span class="refresh-icon" aria-hidden="true">↻</span>
+            <span>Refresh</span>
+          </button>
+        </div>
+      </form>
+    </section>
+
+    <p class="request-status" id="request-status" role="status" aria-live="polite">Connecting to the weather service…</p>
+
+    <section class="weather-content" id="weather-content" aria-label="Weather forecast" hidden>
+      <article class="current-card">
+        <div class="current-topline">
+          <div>
+            <p class="eyebrow current-eyebrow">CURRENT WEATHER</p>
+            <h2 class="city-title" id="city-name"></h2>
+            <p class="local-time" id="updated-at"></p>
+          </div>
+          <span class="current-icon" id="current-icon" aria-hidden="true"></span>
+        </div>
+        <div class="current-main">
+          <p class="temperature"><span id="temperature"></span><span class="degree">°</span></p>
+          <div class="condition-block">
+            <p class="condition" id="condition"></p>
+            <p class="feels-like">Feels like <span id="feels-like"></span>°</p>
+          </div>
+        </div>
+        <div class="high-low">
+          <span>H <strong id="high-temp"></strong>°</span>
+          <span class="high-low-divider" aria-hidden="true"></span>
+          <span>L <strong id="low-temp"></strong>°</span>
+        </div>
+      </article>
+
+      <section class="details-grid" aria-label="Weather details">
+        <article class="detail-card">
+          <span class="detail-icon humidity-icon" aria-hidden="true">◉</span>
+          <p class="detail-label">HUMIDITY</p>
+          <p class="detail-value"><span id="humidity"></span><small>%</small></p>
+          <p class="detail-caption">Relative humidity</p>
+        </article>
+        <article class="detail-card">
+          <span class="detail-icon wind-icon" aria-hidden="true">↗</span>
+          <p class="detail-label">WIND</p>
+          <p class="detail-value"><span id="wind"></span><small> km/h</small></p>
+          <p class="detail-caption">Gentle breeze</p>
+        </article>
+        <article class="detail-card">
+          <span class="detail-icon rain-icon" aria-hidden="true">⌁</span>
+          <p class="detail-label">CHANCE OF RAIN</p>
+          <p class="detail-value"><span id="rain-chance"></span><small>%</small></p>
+          <p class="detail-caption">Next few hours</p>
+        </article>
+      </section>
+
+      <section class="forecast-section" aria-labelledby="forecast-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">AHEAD OF YOU</p>
+            <h2 id="forecast-title">5-day forecast</h2>
+          </div>
+          <span class="forecast-unit">TEMPERATURE <span aria-hidden="true">·</span> °C</span>
+        </div>
+        <div class="forecast-list" id="forecast-list"></div>
+      </section>
+    </section>
+
+    <section class="error-card" id="error-card" role="alert" hidden>
+      <span class="error-icon" aria-hidden="true">!</span>
+      <div>
+        <h2>Couldn't fetch the forecast</h2>
+        <p id="error-message"></p>
+      </div>
+    </section>
+
+    <footer class="page-footer">
+      <span>Weather data is sample content for this demo.</span>
+      <span><span class="footer-dot" aria-hidden="true"></span> JSON response · asynchronous fetch</span>
+    </footer>
+  </main>
+</body>
+</html>
