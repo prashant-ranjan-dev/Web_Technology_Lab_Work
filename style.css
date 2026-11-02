@@ -1363,8 +1363,315 @@ main {
 .orbit-b {
 
     width: 65px;
+
     height: 150px;
+
     transform: translate(-50%, -50%) rotate(28deg);
+
+}
+
+
+/* =========================================================
+   CONTACTS, WEATHER AND BOOKS PROJECT VISUALS
+   ========================================================= */
+
+.contacts-image {
+
+    background: #e7eee9;
+
+}
+
+.contacts-visual {
+
+    width: 220px;
+    padding: 18px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(-3deg);
+    border: 1px solid rgba(32, 63, 48, .1);
+    background: #fbfcfa;
+    box-shadow: 12px 14px 0 rgba(43, 74, 57, .1);
+
+}
+
+.contacts-visual-heading {
+
+    height: 19px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #e8eee9;
+
+}
+
+.contacts-visual-heading span,
+.contacts-visual-heading i {
+
+    height: 5px;
+    display: block;
+    margin-top: 3px;
+    background: #9eb4a3;
+
+}
+
+.contacts-visual-heading span {
+
+    width: 67px;
+
+}
+
+.contacts-visual-heading i {
+
+    width: 31px;
+    background: #d3e0d6;
+
+}
+
+.contact-preview {
+
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding: 7px 0;
+    border-bottom: 1px solid #eef1ee;
+
+}
+
+.contact-preview b {
+
+    width: 25px;
+    height: 25px;
+    display: grid;
+    place-items: center;
+    border-radius: 8px;
+    color: #426d53;
+    background: #eaf2ec;
+    font-size: 8px;
+
+}
+
+.contact-preview:nth-child(3) b {
+
+    color: #8a6651;
+    background: #f5eee7;
+
+}
+
+.contact-preview:nth-child(4) b {
+
+    color: #5e698c;
+    background: #eceef6;
+
+}
+
+.contact-preview > span {
+
+    flex: 1;
+    display: grid;
+    gap: 5px;
+
+}
+
+.contact-preview i {
+
+    height: 4px;
+    display: block;
+    background: #dce5de;
+
+}
+
+.contact-preview i:first-child {
+
+    width: 77%;
+    background: #9eada2;
+
+}
+
+.weather-image {
+
+    background: linear-gradient(145deg, #dae8e8, #c3d8d8);
+
+}
+
+.weather-visual {
+
+    width: 220px;
+    height: 145px;
+    position: absolute;
+    left: 50%;
+    top: 53%;
+    transform: translate(-50%, -50%) rotate(3deg);
+    border: 1px solid rgba(39, 81, 80, .1);
+    border-radius: 7px;
+    background: #f8fbf8;
+    box-shadow: 12px 13px 0 rgba(51, 91, 87, .1);
+
+}
+
+.weather-sun {
+
+    width: 48px;
+    height: 48px;
+    position: absolute;
+    top: 27px;
+    right: 37px;
+    border-radius: 50%;
+    background: #edbd6b;
+
+}
+
+.weather-cloud {
+
+    width: 75px;
+    height: 27px;
+    position: absolute;
+    top: 63px;
+    left: 27px;
+    border-radius: 18px;
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(49, 80, 77, .1);
+
+}
+
+.weather-cloud::before,
+.weather-cloud::after {
+
+    position: absolute;
+    bottom: 8px;
+    content: "";
+    border-radius: 50%;
+    background: inherit;
+
+}
+
+.weather-cloud::before {
+
+    width: 31px;
+    height: 31px;
+    left: 13px;
+
+}
+
+.weather-cloud::after {
+
+    width: 24px;
+    height: 24px;
+    right: 12px;
+
+}
+
+.weather-cloud.cloud-back {
+
+    top: 56px;
+    left: 75px;
+    transform: scale(.75);
+    background: #eaf1ed;
+
+}
+
+.weather-visual-temp {
+
+    position: absolute;
+    top: 25px;
+    left: 29px;
+    z-index: 1;
+    color: #345b54;
+    font-family: var(--serif);
+    font-size: 33px;
+
+}
+
+.weather-visual-lines {
+
+    position: absolute;
+    right: 17px;
+    bottom: 13px;
+    left: 17px;
+    display: flex;
+    gap: 6px;
+
+}
+
+.weather-visual-lines i {
+
+    height: 3px;
+    flex: 1;
+    background: #d9e5df;
+
+}
+
+.books-image {
+
+    background: #eee2d8;
+
+}
+
+.books-visual {
+
+    height: 140px;
+    position: absolute;
+    right: 0;
+    bottom: 43px;
+    left: 0;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 7px;
+
+}
+
+.book-spine {
+
+    width: 37px;
+    height: 112px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(72, 49, 37, .15);
+    border-radius: 3px 5px 4px 2px;
+    color: rgba(255, 255, 255, .86);
+    box-shadow: 4px 7px 10px rgba(76, 52, 40, .15);
+    font-family: var(--serif);
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.spine-one {
+
+    height: 94px;
+    background: #657f6c;
+
+}
+
+.spine-two {
+
+    height: 126px;
+    background: #bd775d;
+
+}
+
+.spine-three {
+
+    height: 108px;
+    background: #77809a;
+
+}
+
+.spine-four {
+
+    height: 88px;
+    background: #c4a66e;
+
+}
+
+.books-sparkle {
+
+    position: absolute;
+    top: 2px;
+    right: 56px;
+    color: #aa775d;
+    font-size: 20px;
 
 }
 
